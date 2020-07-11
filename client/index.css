@@ -1,0 +1,43 @@
+.title {
+    text-align: center;
+}
+
+.button-container {
+    width: 280px;
+    overflow-y: auto;
+    margin: 0 auto;
+}
+
+.button-container > button {
+    width: 100px;
+    height: 100px;
+    float: left;
+    background: lightgray;   
+    margin: 20px;
+    border: 0;
+}
+
+#kyj {
+    background: url( "asset/kyj.png" ) no-repeat;
+}
+#kmg {
+    background: url( "asset/kmg.png" ) no-repeat;
+}
+#ksj {
+    background: url( "asset/ksj.png" ) no-repeat;
+}
+#kjy {
+    background: url( "asset/kjy.png" ) no-repeat;
+}
+#pjk {
+    background: url( "asset/pjk.png" ) no-repeat;
+}
+#sms {
+    background: url( "asset/sms.png" ) no-repeat;
+}
+#ajy {
+    background: url( "asset/ajy.png" ) no-repeat;
+}
+#pbj {
+    background: url( "asset/pbj.png" ) no-repeat;
+}
