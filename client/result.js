@@ -1,5 +1,3 @@
-let name;
-let coin;
 let board = [];
 
 function setSize() {
@@ -17,11 +15,6 @@ function setSize() {
         buttons[i].style.width = Math.floor(boardWidth * .18) + 'px';
         buttons[i].style.height = Math.floor(boardWidth * .18) + 'px';
     }
-}
-
-function setCoin() {
-    let mycoin = document.getElementById('mycoin');
-    mycoin.innerHTML = 'Coins: ' + coin;
 }
 
 function setBoard() {
@@ -43,26 +36,10 @@ function initBoard() {
         boardElement.appendChild(newButton);
     }
 
-    name = window.location.href.split('?name=')[1];
-    getCoin();
     getBoard();
 
     setSize();
     setBoard();
-    setCoin();
-}
-
-function getCoin() {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === xhr.DONE) {
-            coin = xhr.response['coin'];
-            setCoin();
-        }
-    };
-    xhr.responseType = 'json';
-    xhr.open('GET', '/coin/' + name);
-    xhr.send();
 }
 
 function getBoard() {
@@ -75,28 +52,6 @@ function getBoard() {
     };
     xhr.responseType = 'json';
     xhr.open('GET', '/board_data');
-    xhr.send();
-}
-
-function postDips(e) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === xhr.DONE) {
-            if (xhr.status == 201) {
-                coin = xhr.response['coin'];
-                board = xhr.response['board'];
-            }
-            else {
-                coin = xhr.response['coin'];
-                board = xhr.response['board'];
-                alert(xhr.response['error']);
-            }
-            setBoard();
-            setCoin();
-        }
-    };
-    xhr.responseType = 'json';
-    xhr.open('POST', '/dips/' + name + '/' + e.id);
     xhr.send();
 }
 
