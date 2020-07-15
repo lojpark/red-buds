@@ -7,34 +7,193 @@
     margin: 0 auto;
 }
 
-#board > button {
+#foot {
+    width: 300px;
+    margin: 30px auto;
+}
+
+body{
+    text-align:center;
+}
+body:before{
+    content:'';
+    height:100%;
+    display:inline-block;
+    vertical-align:middle;
+}
+#beat{
+    background:#FFABBC;
+    color:#fff;
+    border:none;
+    position:relative;
+    width: 300px;
+    height: 100px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+#beat:hover{
+    background:#fff;
+    color:#FFABBC;
+}
+#beat:before,#beat:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #FFABBC;
+    transition:400ms ease all;
+}
+#beat:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+#beat:hover:before,#beat:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+  
+.card {
     float: left;
     margin: 1%;
     border: 0;
-    background-size: contain;
+
+    transition: transform 3s;
+    transform-style: preserve-3d;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+    position: relative;
+}
+  
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+  
+.card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card__face--back {
+    transform: rotateY(180deg);
+}
+
+.itsme {
+    animation: shake 0.5s;
+  
+    animation-iteration-count: 6;
+}
+  
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+  
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 40%;
+    max-width: 1024px;
+}
+  
+/* Add Animation */
+.modal-content {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+  
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+  
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+  
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+  
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .kyj {
-    background: url( "asset/kyj.png" ) no-repeat;
+    background: linear-gradient(0deg, rgba(255, 170, 185, 0.2), rgba(255, 170, 185, 0.2)), url( "asset/kyj.png" ) no-repeat;
 }
 .kmg {
-    background: url( "asset/kmg.png" ) no-repeat;
+    background: linear-gradient(0deg, rgba(250, 200, 150, 0.2), rgba(250, 200, 150, 0.2)), url( "asset/kmg.png" ) no-repeat;
 }
 .ksj {
-    background: url( "asset/ksj.png" ) no-repeat;
+    background: linear-gradient(0deg, rgba(185, 170, 255, 0.2), rgba(185, 170, 255, 0.2)), url( "asset/ksj.png" ) no-repeat;
 }
 .kjy {
-    background: url( "asset/kjy.png" ) no-repeat;
+    background: linear-gradient(0deg, rgba(164, 230, 164, 0.2), rgba(164, 230, 164, 0.2)), url( "asset/kjy.png" ) no-repeat;
 }
 .pjk {
-    background: url( "asset/pjk.png" ) no-repeat;
+    background: linear-gradient(0deg, rgba(220, 160, 250, 0.2), rgba(220, 160, 250, 0.2)), url( "asset/pjk.png" ) no-repeat;
 }
 .sms {
-    background: url( "asset/sms.png" ) no-repeat;
+    background: linear-gradient(0deg, rgba(255, 170, 210, 0.2), rgba(255, 170, 210, 0.2)), url( "asset/sms.png" ) no-repeat;
 }
 .ajy {
-    background: url( "asset/ajy.png" ) no-repeat;
+    background: linear-gradient(0deg, rgba(240, 206, 190, 0.2), rgba(240, 206, 190, 0.2)), url( "asset/ajy.png" ) no-repeat;
 }
 .pbj {
-    background: url( "asset/pbj.png" ) no-repeat;
+    background: linear-gradient(0deg, rgba(200, 200, 200, 0.2), rgba(200, 200, 200, 0.2)), url( "asset/pbj.png" ) no-repeat;
+}
+
+.lot {
+    background: linear-gradient(0deg, rgba(200, 200, 200, 0.2), rgba(200, 200, 200, 0.2)), url( "asset/lot.png" ) no-repeat;
+}
+.meet, .usb, .case, .buds {
+    background: linear-gradient(0deg, rgba(255, 209, 2, 0.2), rgba(255, 166, 1, 0.2)), url( "asset/get.png" ) no-repeat;
 }

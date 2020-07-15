@@ -14,29 +14,30 @@
     float: left;
     margin: 15px 20px;
     border: 0;
+    background-size: contain;
 }
 
-#kyj {
+.kyj {
     background: url( "asset/kyj.png" ) no-repeat;
 }
-#kmg {
+.kmg {
     background: url( "asset/kmg.png" ) no-repeat;
 }
-#ksj {
+.ksj {
     background: url( "asset/ksj.png" ) no-repeat;
 }
-#kjy {
+.kjy {
     background: url( "asset/kjy.png" ) no-repeat;
 }
-#pjk {
+.pjk {
     background: url( "asset/pjk.png" ) no-repeat;
 }
-#sms {
+.sms {
     background: url( "asset/sms.png" ) no-repeat;
 }
-#ajy {
+.ajy {
     background: url( "asset/ajy.png" ) no-repeat;
 }
-#pbj {
+.pbj {
     background: url( "asset/pbj.png" ) no-repeat;
 }
